@@ -1,3 +1,4 @@
 node_modules
 .cahce
 *.DS_Store
+dist
