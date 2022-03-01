@@ -44,7 +44,7 @@ const Placeholder = styled.div`
 const StyledInput = styled.input<IProps>`
   border: none;
   flex-grow: 2;
-  font-size: 16x;
+  font-size: ${(props) => props.theme.blocks.input.fontSize};
 
   :hover,
   :focus {

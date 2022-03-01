@@ -13,6 +13,7 @@
     // disable the rule for all files
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/display-name": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "@typescript-eslint/no-var-requires": "off"
   }
 }

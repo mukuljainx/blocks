@@ -1,12 +1,8 @@
-// Button.stories.ts|tsx
-
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
-import { FiSearch, FiX } from "react-icons/fi";
+import Icon from "../Icon";
 
 import Input, { InputProps } from "./";
-
-console.log(FiSearch);
 
 export default {
   title: "Input",
@@ -28,12 +24,12 @@ WithLeftAndRight.args = {
   ...defaultArgs,
   left: (
     <>
-      <FiSearch />
+      <Icon name="search" />
     </>
   ),
   right: (
     <>
-      <FiX tabIndex={0} />
+      <Icon name="x" tabIndex={0} />
     </>
   ),
 };

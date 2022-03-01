@@ -32,6 +32,7 @@ export const light = {
   colors: colors,
   blocks: {
     input: {
+      fontSize: "1rem",
       color: colors.grayScale[8],
       placeholderColor: colors.grayScale[6],
       default: {
@@ -45,6 +46,13 @@ export const light = {
       },
     },
     button: {},
+    icon: {
+      size: {
+        sm: ".8rem",
+        rg: "1rem",
+        lg: "1.2rem",
+      },
+    },
   },
 };
 
@@ -53,6 +61,7 @@ export const dark: typeof light = {
   colors: colors,
   blocks: {
     input: {
+      fontSize: "1rem",
       color: colors.grayScale[1],
       placeholderColor: colors.grayScale[6],
       default: {
@@ -63,6 +72,14 @@ export const dark: typeof light = {
       },
       error: {
         borderColor: colors.secondary.red,
+      },
+    },
+    button: {},
+    icon: {
+      size: {
+        sm: ".8rem",
+        rg: "1rem",
+        lg: "1.2rem",
       },
     },
   },
