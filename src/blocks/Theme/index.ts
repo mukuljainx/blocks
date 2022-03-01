@@ -29,6 +29,9 @@ const colors = {
 
 export const light = {
   name: "light",
+  config: {
+    background: colors.grayScale[0],
+  },
   colors: colors,
   blocks: {
     input: {
@@ -45,7 +48,31 @@ export const light = {
         borderColor: colors.secondary.red,
       },
     },
-    button: {},
+    button: {
+      fontSize: "1rem",
+      appearance: {
+        primary: {
+          background: colors.primary.blue,
+          color: colors.grayScale[0],
+        },
+        secondary: {
+          background: colors.grayScale[3],
+          color: colors.grayScale[10],
+        },
+        alert: {
+          background: colors.secondary.red,
+          color: colors.grayScale[0],
+        },
+        success: {
+          background: colors.primary.green,
+          color: colors.grayScale[0],
+        },
+        warning: {
+          background: colors.primary.yellow,
+          color: colors.grayScale[0],
+        },
+      },
+    },
     icon: {
       size: {
         sm: ".8rem",
@@ -58,6 +85,9 @@ export const light = {
 
 export const dark: typeof light = {
   name: "dark",
+  config: {
+    background: colors.grayScale[8],
+  },
   colors: colors,
   blocks: {
     input: {
@@ -74,7 +104,31 @@ export const dark: typeof light = {
         borderColor: colors.secondary.red,
       },
     },
-    button: {},
+    button: {
+      fontSize: "1rem",
+      appearance: {
+        primary: {
+          background: colors.primary.blue,
+          color: colors.grayScale[0],
+        },
+        secondary: {
+          background: colors.grayScale[3],
+          color: colors.grayScale[10],
+        },
+        alert: {
+          background: colors.secondary.red,
+          color: colors.grayScale[0],
+        },
+        success: {
+          background: colors.primary.green,
+          color: colors.grayScale[0],
+        },
+        warning: {
+          background: colors.primary.yellow,
+          color: colors.grayScale[0],
+        },
+      },
+    },
     icon: {
       size: {
         sm: ".8rem",
