@@ -13,17 +13,17 @@ const colors = {
     pink: '#FF9AD5',
   },
   grayScale: [
-    '#FFFFFF',
-    '#FAFAFB',
-    '#F1F1F5',
-    '#E2E2EA',
-    '#D5D5DC',
-    '#B5B5BE',
-    '#92929D',
-    '#696974',
-    '#44444F',
-    '#171725',
-    '#000000',
+    '#FFFFFF', // 0
+    '#FAFAFB', // 1
+    '#F1F1F5', // 2
+    '#E2E2EA', // 3
+    '#D5D5DC', // 4
+    '#B5B5BE', // 5
+    '#92929D', // 6
+    '#696974', // 7
+    '#44444F', // 8
+    '#171725', // 9
+    '#000000', // 10
   ],
 };
 
@@ -85,6 +85,11 @@ export const light = {
         lg: '1.2rem',
       },
     },
+    tooltip: {
+      color: colors.grayScale[0],
+      background: colors.grayScale[7],
+      maxWidth: '320px',
+    },
   },
 };
 
@@ -145,6 +150,11 @@ export const dark: typeof light = {
         rg: '1rem',
         lg: '1.2rem',
       },
+    },
+    tooltip: {
+      color: colors.grayScale[0],
+      background: colors.grayScale[7],
+      maxWidth: '320px',
     },
   },
 };
