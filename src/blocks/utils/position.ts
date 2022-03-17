@@ -22,7 +22,6 @@ const getPosition = (
   const { pageYOffset, pageXOffset } = window;
   const triggerCoordinates = trigger.getBoundingClientRect();
   const targetCoordinates = target.getBoundingClientRect();
-  debugger;
   if (appendToBody) {
     switch (position) {
       case 'TopLeft': {
