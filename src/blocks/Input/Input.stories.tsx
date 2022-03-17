@@ -1,35 +1,35 @@
-import React from "react";
-import { ComponentMeta } from "@storybook/react";
-import Icon from "../Icon";
+import React from 'react';
+import { ComponentMeta } from '@storybook/react';
+import { FiSearch, FiX } from 'react-icons/fi';
 
-import Input, { InputProps } from "./";
+import Input, { InputProps } from './';
 
 export default {
-  title: "Input",
+  title: 'Input',
   component: Input,
 } as ComponentMeta<typeof Input>;
 
 const defaultArgs: InputProps = {
-  placeholder: "Enter your name",
+  placeholder: 'Enter your name',
 };
 const Template = (args: InputProps) => <Input {...args} />;
 export const Primary = Template.bind({});
 Primary.args = defaultArgs;
 
 export const WithError = Template.bind({});
-WithError.args = { ...defaultArgs, error: "Name cannot be empty" };
+WithError.args = { ...defaultArgs, error: 'Name cannot be empty' };
 
 export const WithLeftAndRight = Template.bind({});
 WithLeftAndRight.args = {
   ...defaultArgs,
   left: (
     <>
-      <Icon name="search" />
+      <FiSearch />
     </>
   ),
   right: (
     <>
-      <Icon name="x" tabIndex={0} />
+      <FiX tabIndex={0} />
     </>
   ),
 };

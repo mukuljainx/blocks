@@ -1,43 +1,44 @@
 const colors = {
   primary: {
-    blue: "#0062FF",
-    yellow: "#FFC542",
-    skyBlue: "#50B5FF",
-    green: "#3DD598",
+    blue: '#0062FF',
+    yellow: '#FFC542',
+    skyBlue: '#50B5FF',
+    green: '#3DD598',
   },
   secondary: {
-    orange: "#FF974A",
-    red: "#FC5A5A",
-    green: "#82C43C",
-    purple: "#A461D8",
-    pink: "#FF9AD5",
+    orange: '#FF974A',
+    red: '#FC5A5A',
+    green: '#82C43C',
+    purple: '#A461D8',
+    pink: '#FF9AD5',
   },
   grayScale: [
-    "#FFFFFF",
-    "#FAFAFB",
-    "#F1F1F5",
-    "#E2E2EA",
-    "#D5D5DC",
-    "#B5B5BE",
-    "#92929D",
-    "#696974",
-    "#44444F",
-    "#171725",
-    "#000000",
+    '#FFFFFF',
+    '#FAFAFB',
+    '#F1F1F5',
+    '#E2E2EA',
+    '#D5D5DC',
+    '#B5B5BE',
+    '#92929D',
+    '#696974',
+    '#44444F',
+    '#171725',
+    '#000000',
   ],
 };
 
 export const light = {
-  name: "light",
+  name: 'light',
   config: {
     background: colors.grayScale[0],
   },
   colors: colors,
   blocks: {
     input: {
-      fontSize: "1rem",
+      fontSize: '1rem',
       color: colors.grayScale[8],
       placeholderColor: colors.grayScale[6],
+      background: colors.grayScale[0],
       default: {
         borderColor: colors.grayScale[2],
       },
@@ -49,7 +50,7 @@ export const light = {
       },
     },
     button: {
-      fontSize: "1rem",
+      fontSize: '1rem',
       appearance: {
         primary: {
           background: colors.primary.blue,
@@ -71,31 +72,36 @@ export const light = {
           background: colors.primary.yellow,
           color: colors.grayScale[0],
         },
+        invert: {
+          color: colors.grayScale[0],
+          background: colors.grayScale[9],
+        },
       },
     },
     icon: {
       size: {
-        sm: ".8rem",
-        rg: "1rem",
-        lg: "1.2rem",
+        sm: '.8rem',
+        rg: '1rem',
+        lg: '1.2rem',
       },
     },
   },
 };
 
 export const dark: typeof light = {
-  name: "dark",
+  name: 'dark',
   config: {
-    background: colors.grayScale[8],
+    background: '#13131A',
   },
   colors: colors,
   blocks: {
     input: {
-      fontSize: "1rem",
+      fontSize: '1rem',
+      background: colors.grayScale[9],
       color: colors.grayScale[1],
       placeholderColor: colors.grayScale[6],
       default: {
-        borderColor: "rgba(0, 0, 0, 0)",
+        borderColor: colors.grayScale[6],
       },
       active: {
         borderColor: colors.grayScale[0],
@@ -105,7 +111,7 @@ export const dark: typeof light = {
       },
     },
     button: {
-      fontSize: "1rem",
+      fontSize: '1rem',
       appearance: {
         primary: {
           background: colors.primary.blue,
@@ -127,13 +133,17 @@ export const dark: typeof light = {
           background: colors.primary.yellow,
           color: colors.grayScale[0],
         },
+        invert: {
+          background: colors.grayScale[0],
+          color: colors.grayScale[9],
+        },
       },
     },
     icon: {
       size: {
-        sm: ".8rem",
-        rg: "1rem",
-        lg: "1.2rem",
+        sm: '.8rem',
+        rg: '1rem',
+        lg: '1.2rem',
       },
     },
   },

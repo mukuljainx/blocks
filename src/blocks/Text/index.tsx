@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const weightConfig = {
   bold: 700,
@@ -25,20 +25,20 @@ const StyledText = styled.p<IProps>`
   margin: 0;
   ${({ weight, size }) => {
     return `
-    font-weight: ${weightConfig[weight || "regular"]};
-    font-size: ${sizeConfig[size || "rg"]}px;
+    font-weight: ${weightConfig[weight || 'regular']};
+    font-size: ${sizeConfig[size || 'rg']}px;
     `;
   }}
 `;
 
-export type TextProps = React.ComponentPropsWithoutRef<"p"> & IProps;
+export type TextProps = React.ComponentPropsWithoutRef<'p'> & IProps;
 
 const Text = ({ weight, size, truncated, className, ...rest }: TextProps) => {
   return (
     <StyledText
       weight={weight}
       size={size}
-      className={`${className} ${truncated ? "truncate" : ""}`}
+      className={`${className} ${truncated ? 'truncate' : ''}`}
       {...rest}
     />
   );

@@ -1,18 +1,18 @@
 // Button.stories.ts|tsx
 
-import React from "react";
+import React from 'react';
 
-import { ComponentMeta } from "@storybook/react";
+import { ComponentMeta } from '@storybook/react';
 
-import Label, { LabelProps } from "./";
+import Label, { LabelProps } from './';
 
 export default {
-  title: "Label",
+  title: 'Label',
   component: Label,
 } as ComponentMeta<typeof Label>;
 
 const defaultArgs: LabelProps = {
-  children: "Name:",
+  children: 'Name:',
 };
 
 const Template = (args: LabelProps) => <Label {...args} />;

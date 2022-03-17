@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const validHTags = {
-  h1: "h1",
-  h2: "h2",
-  h3: "h3",
-  h4: "h4",
-  h5: "h5",
-  h6: "h6",
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  h4: 'h4',
+  h5: 'h5',
+  h6: 'h6',
 } as const;
 
 const sizeConfig = {
@@ -62,7 +62,7 @@ interface IProps {
   truncated?: boolean;
 }
 
-export type HeaderProps = React.ComponentPropsWithoutRef<"h1"> & IProps;
+export type HeaderProps = React.ComponentPropsWithoutRef<'h1'> & IProps;
 
 const Header = styled.h1<IProps>`
   margin: 0;
@@ -75,7 +75,7 @@ const Header = styled.h1<IProps>`
 `;
 
 const Heading = ({ type, truncated, className, ...rest }: HeaderProps) => {
-  let headerTag: keyof typeof validHTags = "h6";
+  let headerTag: keyof typeof validHTags = 'h6';
 
   if (validHTags[type as unknown as keyof typeof validHTags]) {
     headerTag = type as unknown as keyof typeof validHTags;
@@ -85,7 +85,7 @@ const Heading = ({ type, truncated, className, ...rest }: HeaderProps) => {
     <Header
       as={headerTag}
       type={type}
-      className={`${className} ${truncated ? "truncate" : ""}`}
+      className={`${className} ${truncated ? 'truncate' : ''}`}
       {...rest}
     />
   );

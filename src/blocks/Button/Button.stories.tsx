@@ -1,16 +1,16 @@
-import React from "react";
-import { ComponentMeta } from "@storybook/react";
-import { FiSearch } from "react-icons/fi";
+import React from 'react';
+import { ComponentMeta } from '@storybook/react';
+import { FiSearch } from 'react-icons/fi';
 
-import Button, { ButtonProps } from "./";
+import Button, { ButtonProps } from './';
 
 export default {
-  title: "Button",
+  title: 'Button',
   component: Button,
 } as ComponentMeta<typeof Button>;
 
 const defaultArgs: ButtonProps = {
-  children: "Search",
+  children: 'Search',
 };
 const Template = (args: ButtonProps) => <Button {...args} />;
 export const Primary = Template.bind({});

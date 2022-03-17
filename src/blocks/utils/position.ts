@@ -1,90 +1,101 @@
+export type PositionType =
+  | 'TopLeft'
+  | 'TopCenter'
+  | 'TopRight'
+  | 'BottomLeft'
+  | 'BottomCenter'
+  | 'BottomRight'
+  | 'RightCenter'
+  | 'LeftCenter';
+
 const getPosition = (
-  position: string,
+  position: PositionType,
   trigger: HTMLElement,
   target: HTMLElement,
+  appendToBody?: true,
   offset: { vertical: number; horizontal: number } = {
     vertical: 0,
     horizontal: 0,
   },
-  appendToBody: boolean
 ) => {
   const { horizontal: horizontalOffset, vertical: verticalOffset } = offset;
   const { pageYOffset, pageXOffset } = window;
   const triggerCoordinates = trigger.getBoundingClientRect();
   const targetCoordinates = target.getBoundingClientRect();
+  debugger;
   if (appendToBody) {
     switch (position) {
-      case "TopLeft": {
+      case 'TopLeft': {
         return {
           left: Math.round(
-            triggerCoordinates.left + pageXOffset + horizontalOffset
+            triggerCoordinates.left + pageXOffset + horizontalOffset,
           ),
           top: Math.round(
             triggerCoordinates.top +
               pageYOffset -
-              (targetCoordinates.height + verticalOffset)
+              (targetCoordinates.height + verticalOffset),
           ),
         };
       }
-      case "TopCenter": {
+      case 'TopCenter': {
         const xOffset = triggerCoordinates.left + triggerCoordinates.width / 2;
         return {
           left: Math.round(
             xOffset +
               pageXOffset +
               horizontalOffset -
-              targetCoordinates.width / 2
+              targetCoordinates.width / 2,
           ),
           top: Math.round(
             triggerCoordinates.top +
               pageYOffset -
-              (verticalOffset + targetCoordinates.height)
+              (verticalOffset + targetCoordinates.height),
           ),
         };
       }
-      case "TopRight": {
+      case 'TopRight': {
         return {
           left: Math.round(
             triggerCoordinates.right +
               pageXOffset +
               horizontalOffset -
-              targetCoordinates.width
+              targetCoordinates.width,
           ),
           top: Math.round(
             triggerCoordinates.top +
               pageYOffset -
-              (verticalOffset + targetCoordinates.height)
+              (verticalOffset + targetCoordinates.height),
           ),
         };
       }
-      case "RightCenter": {
+      case 'RightCenter': {
         return {
           left: Math.round(
-            triggerCoordinates.right + pageXOffset + horizontalOffset
+            triggerCoordinates.right + pageXOffset + horizontalOffset,
           ),
           top: Math.round(
             triggerCoordinates.top +
               pageYOffset +
               verticalOffset +
               triggerCoordinates.height / 2 -
-              targetCoordinates.height / 2
+              targetCoordinates.height / 2,
           ),
         };
       }
-      case "BottomRight": {
+      case 'BottomRight': {
         return {
           left: Math.round(
             triggerCoordinates.right +
               pageXOffset +
               horizontalOffset -
-              targetCoordinates.width
+              targetCoordinates.width,
           ),
           top: Math.round(
-            triggerCoordinates.bottom + pageYOffset + verticalOffset
+            triggerCoordinates.bottom + pageYOffset + verticalOffset,
           ),
         };
       }
-      case "BottomCenter": {
+      case 'BottomCenter': {
         const xOffset = triggerCoordinates.left + triggerCoordinates.width / 2;
         console.log({
           xOffset,
@@ -92,10 +103,10 @@ const getPosition = (
             xOffset +
               pageXOffset +
               horizontalOffset -
-              targetCoordinates.width / 2
+              targetCoordinates.width / 2,
           ),
           top: Math.round(
-            triggerCoordinates.bottom + pageYOffset + verticalOffset
+            triggerCoordinates.bottom + pageYOffset + verticalOffset,
           ),
         });
         return {
@@ -103,36 +114,36 @@ const getPosition = (
             xOffset +
               pageXOffset +
               horizontalOffset -
-              targetCoordinates.width / 2
+              targetCoordinates.width / 2,
           ),
           top: Math.round(
-            triggerCoordinates.bottom + pageYOffset + verticalOffset
+            triggerCoordinates.bottom + pageYOffset + verticalOffset,
           ),
         };
       }
-      case "BottomLeft": {
+      case 'BottomLeft': {
         return {
           left: Math.round(
-            triggerCoordinates.left + horizontalOffset + pageXOffset
+            triggerCoordinates.left + horizontalOffset + pageXOffset,
           ),
           top: Math.round(
-            triggerCoordinates.bottom + pageYOffset + verticalOffset
+            triggerCoordinates.bottom + pageYOffset + verticalOffset,
           ),
         };
       }
-      case "LeftCenter": {
+      case 'LeftCenter': {
         return {
           left: Math.round(
             triggerCoordinates.left +
               pageXOffset -
-              (horizontalOffset + targetCoordinates.width)
+              (horizontalOffset + targetCoordinates.width),
           ),
           top: Math.round(
             triggerCoordinates.top +
               pageYOffset +
               verticalOffset +
               triggerCoordinates.height / 2 -
-              targetCoordinates.height / 2
+              targetCoordinates.height / 2,
           ),
         };
       }
@@ -142,32 +153,32 @@ const getPosition = (
             triggerCoordinates.right +
               pageXOffset +
               horizontalOffset -
-              targetCoordinates.width
+              targetCoordinates.width,
           ),
           top: Math.round(
-            triggerCoordinates.bottom + pageYOffset + verticalOffset
+            triggerCoordinates.bottom + pageYOffset + verticalOffset,
           ),
         };
       }
     }
   } else {
     switch (position) {
-      case "TopLeft": {
+      case 'TopLeft': {
         return {
           left: Math.round(horizontalOffset),
           top: -Math.round(targetCoordinates.height + verticalOffset),
         };
       }
-      case "TopCenter": {
+      case 'TopCenter': {
         return {
           left: Math.round(
             (triggerCoordinates.width - targetCoordinates.width) / 2 +
-              horizontalOffset
+              horizontalOffset,
           ),
           top: -Math.round(targetCoordinates.height + verticalOffset),
         };
       }
-      case "TopRight": {
+      case 'TopRight': {
         return {
           left:
             triggerCoordinates.width -
@@ -176,17 +187,17 @@ const getPosition = (
           top: -Math.round(targetCoordinates.height + verticalOffset),
         };
       }
-      case "RightCenter": {
+      case 'RightCenter': {
         return {
           left: triggerCoordinates.width + horizontalOffset,
           top: Math.round(
             verticalOffset +
               triggerCoordinates.height / 2 -
-              targetCoordinates.height / 2
+              targetCoordinates.height / 2,
           ),
         };
       }
-      case "BottomRight": {
+      case 'BottomRight': {
         return {
           left:
             triggerCoordinates.width -
@@ -195,28 +206,28 @@ const getPosition = (
           top: Math.round(verticalOffset + triggerCoordinates.height),
         };
       }
-      case "BottomCenter": {
+      case 'BottomCenter': {
         return {
           left: Math.round(
             (triggerCoordinates.width - targetCoordinates.width) / 2 +
-              horizontalOffset
+              horizontalOffset,
           ),
           top: Math.round(verticalOffset + triggerCoordinates.height),
         };
       }
-      case "BottomLeft": {
+      case 'BottomLeft': {
         return {
           left: horizontalOffset,
           top: Math.round(verticalOffset + triggerCoordinates.height),
         };
       }
-      case "LeftCenter": {
+      case 'LeftCenter': {
         return {
           left: -Math.round(horizontalOffset + targetCoordinates.width),
           top: Math.round(
             verticalOffset +
               triggerCoordinates.height / 2 -
-              targetCoordinates.height / 2
+              targetCoordinates.height / 2,
           ),
         };
       }
@@ -237,7 +248,7 @@ const isInViewport = (
   targetElement: HTMLElement,
   position: { top: number; left: number },
   appendToBody?: boolean,
-  triggerElement?: HTMLElement
+  triggerElement?: HTMLElement,
 ) => {
   const windowHeight = window.innerHeight;
   const windowWidth = window.innerWidth;

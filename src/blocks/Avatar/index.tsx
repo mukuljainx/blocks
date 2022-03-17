@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // todo: uI
 
-export interface AvatarProps extends React.ComponentPropsWithRef<"div"> {
+export interface AvatarProps extends React.ComponentPropsWithRef<'div'> {
   src?: string;
   size?: string;
 }

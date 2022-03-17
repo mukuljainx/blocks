@@ -1,5 +1,5 @@
-import * as React from "react";
-import styled from "styled-components";
+import * as React from 'react';
+import styled from 'styled-components';
 
 export interface IProps {
   left?: React.ReactNode;
@@ -7,16 +7,17 @@ export interface IProps {
   error?: string;
 }
 
-export interface InputWrapper extends Pick<IProps, "error"> {
+export interface InputWrapper extends Pick<IProps, 'error'> {
   isFocused?: boolean;
 }
 
 const InputWrapper = styled.div<InputWrapper>`
   display: flex;
-  border: 2px solid ${(props) => props.theme.blocks.input.default.borderColor};
   border-radius: 12px;
   padding: 8px 12px;
   align-items: center;
+  border: 2px solid ${(props) => props.theme.blocks.input.default.borderColor};
+  background: ${(props) => props.theme.blocks.input.background};
 
   *:not(:last-child) {
     margin-right: 8px;
@@ -45,6 +46,8 @@ const StyledInput = styled.input<IProps>`
   border: none;
   flex-grow: 2;
   font-size: ${(props) => props.theme.blocks.input.fontSize};
+  color: ${(props) => props.theme.blocks.input.color};
+  background: none;
 
   :hover,
   :focus {
@@ -56,24 +59,24 @@ const StyledInput = styled.input<IProps>`
   }
 `;
 
-export type InputProps = React.ComponentPropsWithoutRef<"input"> &
+export type InputProps = React.ComponentPropsWithoutRef<'input'> &
   IProps &
   InputWrapper;
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
     { left, right, className, style, error, onFocus, onBlur, ...props },
-    ref
+    ref,
   ) => {
     const inputRef = React.useRef<HTMLInputElement>(null);
     const [isInputFocused, setInputFocus] = React.useState(false);
     const handleInputFocus = (
-      event: React.FocusEvent<HTMLInputElement, Element>
+      event: React.FocusEvent<HTMLInputElement, Element>,
     ) => {
       setInputFocus(true);
       onFocus && onFocus(event);
     };
     const handleInputBlur = (
-      event: React.FocusEvent<HTMLInputElement, Element>
+      event: React.FocusEvent<HTMLInputElement, Element>,
     ) => {
       setInputFocus(false);
       onBlur && onBlur(event);
@@ -97,7 +100,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {right && <Placeholder>{right}</Placeholder>}
       </InputWrapper>
     );
-  }
+  },
 );
 
 export default Input;

@@ -1,7 +1,7 @@
-import styled, { ThemeProvider } from "styled-components";
-import theme from "../src/blocks/Theme";
-import { addDecorator } from "@storybook/react";
-import { withThemesProvider } from "storybook-addon-styled-component-theme";
+import styled, { ThemeProvider } from 'styled-components';
+import theme from '../src/blocks/Theme';
+import { addDecorator } from '@storybook/react';
+import { withThemesProvider } from 'storybook-addon-styled-component-theme';
 
 const ThemeWrapper = styled.div`
   height: 100%;
@@ -18,12 +18,12 @@ addDecorator(
         <ThemeWrapper>{children}</ThemeWrapper>
       </ThemeProvider>
     );
-  })
+  }),
 );
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-  layout: "fullscreen",
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  layout: 'fullscreen',
   controls: {
     matchers: {
       color: /(background|color)$/i,
