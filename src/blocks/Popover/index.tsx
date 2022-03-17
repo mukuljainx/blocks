@@ -10,7 +10,7 @@ export interface PopoverProps {
   padding?: ReactTinyPopoverProps['padding'];
   popover: React.ReactElement;
   children: React.ReactElement;
-  positions?: PopoverPosition | PopoverPosition[];
+  direction?: PopoverPosition | PopoverPosition[];
   on?: 'hover' | 'click';
   closeOnOutsideClick?: boolean;
   onOpen?: () => void;
@@ -22,7 +22,7 @@ export interface PopoverProps {
 }
 
 const Popover = ({
-  positions,
+  direction,
   align,
   padding,
   children,
@@ -36,7 +36,7 @@ const Popover = ({
 }: PopoverProps) => {
   const [open, setOpen] = React.useState(false);
   const popoverPosition: PopoverPosition[] =
-    typeof positions === 'string' ? ['bottom'] : positions;
+    typeof direction === 'string' ? [direction] : direction;
 
   const onClick = () => {
     setOpen((o) => {
