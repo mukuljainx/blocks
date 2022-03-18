@@ -25,7 +25,7 @@ const Tooltip: React.FC<TooltipProps> = ({
 }) => {
   return (
     <Popover
-      on="click"
+      on="hover"
       align="center"
       direction={direction}
       popover={<TooltipWrapper>{content}</TooltipWrapper>}
