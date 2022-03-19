@@ -34,6 +34,20 @@ export const light = {
   },
   colors: colors,
   blocks: {
+    link: {
+      color: colors.grayScale[10],
+      hover: {
+        color: colors.primary.blue,
+      },
+    },
+    paper: {
+      background: colors.grayScale[0],
+      borderRadius: {
+        small: '4px',
+        medium: '8px',
+        large: '12px',
+      },
+    },
     input: {
       fontSize: '1rem',
       color: colors.grayScale[8],
@@ -100,6 +114,20 @@ export const dark: typeof light = {
   },
   colors: colors,
   blocks: {
+    link: {
+      color: colors.grayScale[0],
+      hover: {
+        color: colors.primary.blue,
+      },
+    },
+    paper: {
+      background: '#1C1C24',
+      borderRadius: {
+        small: '4px',
+        medium: '8px',
+        large: '12px',
+      },
+    },
     input: {
       fontSize: '1rem',
       background: colors.grayScale[9],

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { ThemeType } from '../Theme';
 
 interface IPaperProps extends React.ComponentPropsWithoutRef<'div'> {
   flex?: boolean;
@@ -13,6 +14,8 @@ interface IPaperProps extends React.ComponentPropsWithoutRef<'div'> {
     | 'space-around';
   height?: string | number;
   width?: string | number;
+  borderRadius?: keyof ThemeType['blocks']['paper']['borderRadius'];
+  gutter?: number;
   solid?: boolean;
 }
 
@@ -26,7 +29,18 @@ ${({ justifyContent }) =>
     justifyContent && `justify-content: ${justifyContent};`}
     ${({ height }) => height && `height: ${height};`}
     ${({ width }) => (width ? `width: ${width};` : 'width: 100%;')}
-    ${({ solid }) => (solid ? 'border-radius: 0;' : 'border-radius: 4px;')}
+  ${({ borderRadius, theme }) =>
+    borderRadius &&
+    `border-radius: ${theme.blocks.paper.borderRadius[borderRadius]};`}
+    ${({ solid, theme }) =>
+    solid && `background: ${theme.blocks.paper.background};`}
+
+  > * {
+    &:not(:last-child) {
+      ${({ gutter, stack }) => gutter && stack && `margin-bottom: ${gutter}px;`}
+      ${({ gutter, flex }) => gutter && flex && `margin-right: ${gutter}px;`}
+    }
+  }
 `;
 
 export type PaperProps = IPaperProps;
