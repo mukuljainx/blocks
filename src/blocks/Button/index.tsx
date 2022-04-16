@@ -6,6 +6,7 @@ import { darken } from 'polished';
 interface WrapperProps {
   appearance?: keyof ThemeType['blocks']['button']['appearance'];
   fullWidth?: boolean;
+  onlyPlaceholder: boolean;
 }
 
 const Placeholder = styled.div`
@@ -42,7 +43,7 @@ const StyledButton = styled.button<WrapperProps>`
 
   ${({ fullWidth }) => fullWidth && `width: 100%;`}
   ${Placeholder} {
-    margin-right: 8px;
+    margin-right: ${({ onlyPlaceholder }) => (onlyPlaceholder ? 0 : '8px')};
   }
 `;
 
@@ -56,7 +57,7 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, left, ...props }, ref) => {
     return (
-      <StyledButton {...props} ref={ref}>
+      <StyledButton {...props} ref={ref} onlyPlaceholder={!children}>
         {left && <Placeholder>{left}</Placeholder>}
         {children}
       </StyledButton>
