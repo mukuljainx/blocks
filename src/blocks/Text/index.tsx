@@ -1,32 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-
-const weightConfig = {
-  bold: 700,
-  regular: 400,
-  medium: 500,
-  light: 300,
-};
-
-const sizeConfig = {
-  sm: 12,
-  rg: 14,
-  md: 16,
-  lg: 18,
-};
+import { ThemeType } from '../Theme';
 
 type IProps = {
-  weight?: keyof typeof weightConfig;
+  weight?: keyof ThemeType['blocks']['text']['weight'];
   truncated?: boolean;
-  size?: keyof typeof sizeConfig;
+  size?: keyof ThemeType['blocks']['text']['size'];
   className?: string;
 };
 const StyledText = styled.p<IProps>`
   margin: 0;
-  ${({ weight, size }) => {
+  ${({
+    weight,
+    size,
+    theme: {
+      blocks: { text },
+    },
+  }) => {
     return `
-    font-weight: ${weightConfig[weight || 'regular']};
-    font-size: ${sizeConfig[size || 'rg']}px;
+    font-weight: ${text.weight[weight || 'regular']};
+    font-size: ${text.size[size || 'rg']}px;
     `;
   }}
 `;

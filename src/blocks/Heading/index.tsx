@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ThemeType } from '../Theme';
 
 const validHTags = {
   h1: 'h1',
@@ -10,55 +11,8 @@ const validHTags = {
   h6: 'h6',
 } as const;
 
-const sizeConfig = {
-  h1: {
-    weight: 600,
-    size: 48,
-  },
-  h2: {
-    weight: 600,
-    size: 36,
-  },
-  h3: {
-    weight: 600,
-    size: 28,
-  },
-  h4: {
-    weight: 600,
-    size: 24,
-  },
-  h5: {
-    weight: 600,
-    size: 18,
-  },
-  h6: {
-    weight: 600,
-    size: 16,
-  },
-  tittle: {
-    weight: 600,
-    size: 16,
-  },
-  h7: {
-    weight: 600,
-    size: 14,
-  },
-  h8: {
-    weight: 400,
-    size: 14,
-  },
-  h9: {
-    weight: 600,
-    size: 12,
-  },
-  h10: {
-    weight: 600,
-    size: 11,
-  },
-};
-
 interface IProps {
-  type: keyof typeof sizeConfig;
+  type: keyof ThemeType['blocks']['heading']['config'];
   truncated?: boolean;
 }
 
@@ -66,10 +20,15 @@ export type HeaderProps = React.ComponentPropsWithoutRef<'h1'> & IProps;
 
 const Header = styled.h1<IProps>`
   margin: 0;
-  ${({ type }) => {
+  ${({
+    type,
+    theme: {
+      blocks: { heading },
+    },
+  }) => {
     return `
-      font-weight: ${sizeConfig[type].weight};
-      font-size: ${sizeConfig[type].size}px;
+      font-weight: ${heading.config[type].weight};
+      font-size: ${heading.config[type].size}px;
     `;
   }}
 `;

@@ -34,6 +34,69 @@ export const light = {
   },
   colors: colors,
   blocks: {
+    text: {
+      weight: {
+        bold: 700,
+        regular: 400,
+        medium: 500,
+        light: 300,
+      },
+      size: {
+        sm: 12,
+        rg: 14,
+        md: 16,
+        lg: 18,
+      },
+    },
+    heading: {
+      config: {
+        h1: {
+          weight: 600,
+          size: 48,
+        },
+        h2: {
+          weight: 600,
+          size: 36,
+        },
+        h3: {
+          weight: 600,
+          size: 28,
+        },
+        h4: {
+          weight: 600,
+          size: 24,
+        },
+        h5: {
+          weight: 600,
+          size: 18,
+        },
+        h6: {
+          weight: 600,
+          size: 16,
+        },
+        tittle: {
+          weight: 600,
+          size: 16,
+        },
+        h7: {
+          weight: 600,
+          size: 14,
+        },
+        h8: {
+          weight: 400,
+          size: 14,
+        },
+        h9: {
+          weight: 600,
+          size: 12,
+        },
+        h10: {
+          weight: 600,
+          size: 11,
+        },
+      },
+    },
+
     link: {
       color: colors.grayScale[10],
       hover: {
@@ -114,6 +177,8 @@ export const dark: typeof light = {
   },
   colors: colors,
   blocks: {
+    text: light.blocks.text,
+    heading: light.blocks.heading,
     link: {
       color: colors.grayScale[0],
       hover: {
