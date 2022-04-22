@@ -6,7 +6,7 @@ import { darken } from 'polished';
 interface WrapperProps {
   appearance?: keyof ThemeType['blocks']['button']['appearance'];
   fullWidth?: boolean;
-  onlyPlaceholder: boolean;
+  onlyPlaceholder?: boolean;
 }
 
 const Placeholder = styled.div`
@@ -49,7 +49,7 @@ const StyledButton = styled.button<WrapperProps>`
 
 export interface ButtonProps
   extends React.ComponentPropsWithoutRef<'button'>,
-    WrapperProps {
+    Pick<WrapperProps, 'fullWidth' | 'appearance'> {
   children?: string;
   left?: React.ReactNode;
 }
