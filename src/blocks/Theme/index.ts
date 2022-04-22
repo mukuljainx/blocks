@@ -27,13 +27,41 @@ const colors = {
   ],
 };
 
+const borderRadius = {
+  small: '4px',
+  medium: '8px',
+  large: '12px',
+};
+
 export const light = {
   name: 'light',
   config: {
     background: colors.grayScale[0],
   },
+  borderRadius,
   colors: colors,
   blocks: {
+    status: {
+      padding: '5px 8px',
+      borderRadius: borderRadius.small,
+      config: {
+        primary: {
+          color: colors.primary.skyBlue,
+        },
+        secondary: {
+          color: colors.grayScale[7],
+        },
+        success: {
+          color: colors.primary.green,
+        },
+        warning: {
+          color: colors.primary.yellow,
+        },
+        error: {
+          color: colors.secondary.red,
+        },
+      },
+    },
     text: {
       weight: {
         bold: 700,
@@ -96,7 +124,6 @@ export const light = {
         },
       },
     },
-
     link: {
       color: colors.grayScale[10],
       hover: {
@@ -105,11 +132,7 @@ export const light = {
     },
     paper: {
       background: colors.grayScale[0],
-      borderRadius: {
-        small: '4px',
-        medium: '8px',
-        large: '12px',
-      },
+      borderRadius: borderRadius,
     },
     input: {
       fontSize: '1rem',
@@ -171,12 +194,14 @@ export const light = {
 };
 
 export const dark: typeof light = {
+  ...light,
   name: 'dark',
   config: {
     background: '#13131A',
   },
   colors: colors,
   blocks: {
+    status: light.blocks.status,
     text: light.blocks.text,
     heading: light.blocks.heading,
     link: {
@@ -187,11 +212,7 @@ export const dark: typeof light = {
     },
     paper: {
       background: '#1C1C24',
-      borderRadius: {
-        small: '4px',
-        medium: '8px',
-        large: '12px',
-      },
+      borderRadius: borderRadius,
     },
     input: {
       fontSize: '1rem',

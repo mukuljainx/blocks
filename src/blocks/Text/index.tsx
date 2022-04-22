@@ -7,6 +7,7 @@ type IProps = {
   truncated?: boolean;
   size?: keyof ThemeType['blocks']['text']['size'];
   className?: string;
+  as?: keyof JSX.IntrinsicElements;
 };
 const StyledText = styled.p<IProps>`
   margin: 0;
