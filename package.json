@@ -2,7 +2,9 @@
   "name": "blocks",
   "version": "1.0.0-0",
   "description": "UI component library",
-  "main": "index.js",
+  "main": "dist/cjs/blocks/index.js",
+  "typings": "dist/cjs/blocks/index.d.ts",
+  "module": "dist/esm/blocks/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && npm run build:cjs && npm run build:esnext",
@@ -43,20 +45,22 @@
     "lodash.merge": "^4.6.2",
     "pre-commit": "^1.2.2",
     "prettier": "^2.5.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
     "react-icons": "^4.3.1",
     "storybook-addon-styled-component-theme": "^2.0.0",
     "ts-node": "^10.5.0",
-    "typescript": "^4.5.5"
-  },
-  "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0"
-  },
-  "dependencies": {
+    "typescript": "^4.5.5",
     "polished": "^4.1.4",
     "react-tiny-popover": "^7.0.1",
     "styled-components": "^5.3.3"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0",
+    "polished": "^4.1.4",
+    "react-tiny-popover": "^7.0.1",
+    "styled-components": "^5.3.3"
+  },
+  "dependencies": {}
 }
