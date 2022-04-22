@@ -1,6 +1,6 @@
 {
   "name": "blocks",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "UI component library",
   "main": "dist/cjs/blocks/index.js",
   "typings": "dist/cjs/blocks/index.d.ts",
