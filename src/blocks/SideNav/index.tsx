@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Paper, { PaperProps } from '../../blocks/Paper';
-import Link, { LinkProps } from '../../blocks/Link';
+import Paper, { PaperProps } from '../Paper';
+import Link, { LinkProps } from '../Link';
 
 const Wrapper = styled(Paper)`
   padding: 12px 16px;
