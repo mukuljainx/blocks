@@ -13,7 +13,7 @@ import SideNav from './SideNav';
 import Spinner from './Spinner';
 import Status from './Status';
 import Text from './Text';
-import Theme from './Theme';
+import { light, dark, ThemeType, BlockThemeProvider } from './Theme';
 import Tooltip from './Tooltip';
 
 export {
@@ -32,6 +32,9 @@ export {
   Spinner,
   Status,
   Text,
-  Theme,
+  ThemeType,
+  BlockThemeProvider,
+  light as lightTheme,
+  dark as darkTheme,
   Tooltip,
 };

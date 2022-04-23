@@ -274,5 +274,5 @@ export const dark: typeof light = {
 };
 
 export type ThemeType = typeof light;
-
+export { default as BlockThemeProvider } from './BlockThemeProvider';
 export default { light, dark };
