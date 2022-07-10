@@ -15,6 +15,7 @@ import Status from './Status';
 import Text from './Text';
 import { light, dark, ThemeType, BlockThemeProvider } from './Theme';
 import Tooltip from './Tooltip';
+import Separator from './Separator';
 
 export {
   Alert,
@@ -37,4 +38,5 @@ export {
   light as lightTheme,
   dark as darkTheme,
   Tooltip,
+  Separator,
 };
