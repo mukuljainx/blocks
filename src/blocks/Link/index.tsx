@@ -9,10 +9,7 @@ const Wrapper = styled(Paper).attrs({
   color: ${({ theme }) => theme.blocks.link.color};
   text-decoration: none;
   cursor: pointer;
-  ${({ theme, active }) => active && `color: ${theme.blocks.link.hover.color}`};
-  &:hover {
-    color: ${({ theme }) => theme.blocks.link.hover.color};
-  }
+  ${({ theme, active }) => active && `color: ${theme.blocks.link.color}`};
 `;
 
 export interface LinkProps extends React.ComponentPropsWithoutRef<'div'> {
