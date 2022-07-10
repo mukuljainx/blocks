@@ -13,7 +13,7 @@ export interface InputWrapper extends Pick<IProps, 'error'> {
 
 const InputWrapper = styled.div<InputWrapper>`
   display: flex;
-  border-radius: 12px;
+  border-radius: ${(props) => props.theme.borderRadius.small};
   padding: 8px 12px;
   align-items: center;
   border: 2px solid ${(props) => props.theme.blocks.input.default.borderColor};

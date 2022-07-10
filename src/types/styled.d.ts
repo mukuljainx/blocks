@@ -7,5 +7,6 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     colors: ThemeType['colors'];
     blocks: ThemeType['blocks'];
+    borderRadius: ThemeType['borderRadius'];
   }
 }
