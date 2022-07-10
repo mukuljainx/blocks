@@ -125,14 +125,14 @@ export const light = {
       },
     },
     link: {
-      color: colors.grayScale[10],
-      hover: {
-        color: colors.primary.blue,
-      },
+      color: colors.primary.blue,
     },
     paper: {
       background: colors.grayScale[0],
       borderRadius: borderRadius,
+    },
+    separator: {
+      color: colors.grayScale[9],
     },
     input: {
       fontSize: '1rem',
@@ -151,6 +151,7 @@ export const light = {
     },
     button: {
       fontSize: '1rem',
+      fontWeight: 400,
       appearance: {
         primary: {
           background: colors.primary.blue,
@@ -204,12 +205,7 @@ export const dark: typeof light = {
     status: light.blocks.status,
     text: light.blocks.text,
     heading: light.blocks.heading,
-    link: {
-      color: colors.grayScale[0],
-      hover: {
-        color: colors.primary.blue,
-      },
-    },
+    link: light.blocks.link,
     paper: {
       background: '#1C1C24',
       borderRadius: borderRadius,
@@ -229,8 +225,10 @@ export const dark: typeof light = {
         borderColor: colors.secondary.red,
       },
     },
+    separator: light.blocks.separator,
     button: {
       fontSize: '1rem',
+      fontWeight: 400,
       appearance: {
         primary: {
           background: colors.primary.blue,
