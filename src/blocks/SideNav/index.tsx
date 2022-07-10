@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Paper, { PaperProps } from '../Paper';
-import Link, { LinkProps } from '../Link';
+import SideNavItem, { SideNavItemProps } from '../SideNavItem';
 
 const Wrapper = styled(Paper)`
   padding: 12px 16px;
@@ -10,10 +10,10 @@ const Wrapper = styled(Paper)`
 export interface SideNavProps
   extends React.ComponentPropsWithoutRef<'div'>,
     PaperProps {
-  items: Array<LinkProps>;
+  items: Array<SideNavItemProps>;
   gap?: number;
   activeItem?: string;
-  onItemClick?: LinkProps['action'];
+  onItemClick?: SideNavItemProps['action'];
 }
 
 const SideNav = ({
@@ -32,7 +32,7 @@ const SideNav = ({
       data-component="sideNav"
     >
       {items.map((item, index) => (
-        <Link
+        <SideNavItem
           active={item.id === activeItem}
           {...item}
           key={item.id}

@@ -12,7 +12,8 @@ const Wrapper = styled(Paper).attrs({
   ${({ theme, active }) => active && `color: ${theme.blocks.link.color}`};
 `;
 
-export interface LinkProps extends React.ComponentPropsWithoutRef<'div'> {
+export interface SideNavItemProps
+  extends React.ComponentPropsWithoutRef<'div'> {
   icon?: React.ReactNode;
   title: string;
   href?: string;
@@ -25,7 +26,7 @@ export interface LinkProps extends React.ComponentPropsWithoutRef<'div'> {
   active?: boolean;
 }
 
-const Link = ({
+const SideNavItem = ({
   href,
   title,
   icon,
@@ -34,7 +35,7 @@ const Link = ({
   index,
   active,
   ...rest
-}: LinkProps) => {
+}: SideNavItemProps) => {
   return (
     <Wrapper
       active={active}
@@ -55,4 +56,4 @@ const Link = ({
   );
 };
 
-export default Link;
+export default SideNavItem;

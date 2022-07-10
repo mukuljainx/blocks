@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta } from '@storybook/react';
-import SideNavItem, { LinkProps } from '.';
+import SideNavItem, { SideNavItemProps } from '.';
 import { FiHome } from 'react-icons/fi';
 
 export default {
@@ -8,12 +8,12 @@ export default {
   component: SideNavItem,
 } as ComponentMeta<typeof SideNavItem>;
 
-const defaultArgs: LinkProps = {
+const defaultArgs: SideNavItemProps = {
   title: 'Home',
   id: 'home',
   action: console.log,
 };
-const Template = (args: LinkProps) => <SideNavItem {...args} />;
+const Template = (args: SideNavItemProps) => <SideNavItem {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = defaultArgs;
